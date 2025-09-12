@@ -1,0 +1,16 @@
+# Ignore bundler vendor directory
+/vendor/
+
+# Ignore bundler config
+.bundle/
+
+# Ignore system-specific cache files
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ignore site build output
+_site/
+
+# Ignore macOS junk files
+.DS_Store

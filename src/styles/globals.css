@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* ✅ Define theme tokens inline */
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+
+  --font-sans: "Geist Sans", system-ui, sans-serif;
+  --font-mono: "Geist Mono", monospace;
+}
+
+/* ✅ Dark mode overrides — Tailwind auto maps to `dark:` utilities */
+@layer base {
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background: #0a0a0a;
+      --color-foreground: #ededed;
+    }
+  }
+
+  /* ✅ Apply defaults globally */
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}

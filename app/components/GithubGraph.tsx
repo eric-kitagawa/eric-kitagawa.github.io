@@ -5,8 +5,6 @@ import type { ContributionCalendar } from "@/types/contributions";
 import ContributionGraph from "@/components/ContributionGraph";
 import GameCanvas from "@/components/GameCanvas";
 
-const GITHUB_USERNAME = "eric-kitagawa";
-
 export default function GithubGraph() {
   const [calendar, setCalendar] = useState<ContributionCalendar | null>(null);
   const [playing, setPlaying] = useState(false);
@@ -15,7 +13,7 @@ export default function GithubGraph() {
     <section className="mx-auto flex w-[50%] flex-col py-4">
       {!playing ? (
         <div className="flex flex-col gap-4">
-          <ContributionGraph userName={GITHUB_USERNAME} onReady={setCalendar} />
+          <ContributionGraph onReady={setCalendar} />
 
           {calendar && (
             <button

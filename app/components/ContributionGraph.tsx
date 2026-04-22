@@ -5,7 +5,6 @@ import { useContributions } from "@/hooks/github";
 import type { ContributionCalendar } from "@/types/contributions";
 
 interface Props {
-  userName: string;
   onReady: (calendar: ContributionCalendar) => void;
 }
 
@@ -18,7 +17,15 @@ export default function ContributionGraph({ onReady }: Props) {
 
   if (loading) {
     return (
-      <p className="text-xs font-mono text-zinc-500">loading contributions...</p>
+      <div className="flex gap-[3px] animate-pulse">
+        {Array.from({ length: 53 }, (_, wi) => (
+          <div key={wi} className="flex flex-col gap-[3px] flex-1">
+            {Array.from({ length: 7 }, (_, di) => (
+              <div key={di} className="w-full aspect-square rounded-[2px] bg-[#ebedf0]" />
+            ))}
+          </div>
+        ))}
+      </div>
     );
   }
 

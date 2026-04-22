@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type React from "react";
 import type { ContributionCalendar } from "@/types/contributions";
 import { createGame } from "@/lib/game/engine";
 import type { GameStatus } from "@/lib/game/types";
@@ -66,11 +67,8 @@ export default function GameCanvas({ calendar, calendarHeight, onExit }: Props) 
   return (
     <div
       ref={containerRef}
-      className="w-full relative overflow-hidden"
-      style={{
-        height: containerHeight,
-        transition: "height 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-      }}
+      className="game-canvas-container w-full relative overflow-hidden"
+      style={{ '--canvas-height': `${containerHeight}px` } as React.CSSProperties}
       onTransitionEnd={(e) => {
         if (exiting && e.propertyName === "height") onExit();
       }}

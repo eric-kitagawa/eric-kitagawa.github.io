@@ -2,7 +2,7 @@ import { getRedisClient } from "@/lib/redis";
 import type { ContributionCalendar } from "@/types/contributions";
 
 const USERNAME = "eric-kitagawa";
-const CACHE_KEY = `github:contributions:${USERNAME}`;
+const CACHE_KEY = `github:contributions:${USERNAME}:v2`;
 const CACHE_TTL = 3600;
 
 const QUERY = `
@@ -16,6 +16,7 @@ const QUERY = `
               date
               contributionCount
               color
+              contributionLevel
             }
           }
         }

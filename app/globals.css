@@ -30,6 +30,92 @@ body {
   0.75% { filter: brightness(2.2); box-shadow: 0 0 5px 1px rgba(180, 215, 255, 0.55); }
 }
 
+.shimmer-cell {
+  animation: shimmer-cell 8s calc((var(--wi, 0) + var(--di, 0)) * 35ms) infinite;
+}
+
+.contrib-calendar > .contrib-week:nth-child(1) { --wi: 0; }
+.contrib-calendar > .contrib-week:nth-child(2) { --wi: 1; }
+.contrib-calendar > .contrib-week:nth-child(3) { --wi: 2; }
+.contrib-calendar > .contrib-week:nth-child(4) { --wi: 3; }
+.contrib-calendar > .contrib-week:nth-child(5) { --wi: 4; }
+.contrib-calendar > .contrib-week:nth-child(6) { --wi: 5; }
+.contrib-calendar > .contrib-week:nth-child(7) { --wi: 6; }
+.contrib-calendar > .contrib-week:nth-child(8) { --wi: 7; }
+.contrib-calendar > .contrib-week:nth-child(9) { --wi: 8; }
+.contrib-calendar > .contrib-week:nth-child(10) { --wi: 9; }
+.contrib-calendar > .contrib-week:nth-child(11) { --wi: 10; }
+.contrib-calendar > .contrib-week:nth-child(12) { --wi: 11; }
+.contrib-calendar > .contrib-week:nth-child(13) { --wi: 12; }
+.contrib-calendar > .contrib-week:nth-child(14) { --wi: 13; }
+.contrib-calendar > .contrib-week:nth-child(15) { --wi: 14; }
+.contrib-calendar > .contrib-week:nth-child(16) { --wi: 15; }
+.contrib-calendar > .contrib-week:nth-child(17) { --wi: 16; }
+.contrib-calendar > .contrib-week:nth-child(18) { --wi: 17; }
+.contrib-calendar > .contrib-week:nth-child(19) { --wi: 18; }
+.contrib-calendar > .contrib-week:nth-child(20) { --wi: 19; }
+.contrib-calendar > .contrib-week:nth-child(21) { --wi: 20; }
+.contrib-calendar > .contrib-week:nth-child(22) { --wi: 21; }
+.contrib-calendar > .contrib-week:nth-child(23) { --wi: 22; }
+.contrib-calendar > .contrib-week:nth-child(24) { --wi: 23; }
+.contrib-calendar > .contrib-week:nth-child(25) { --wi: 24; }
+.contrib-calendar > .contrib-week:nth-child(26) { --wi: 25; }
+.contrib-calendar > .contrib-week:nth-child(27) { --wi: 26; }
+.contrib-calendar > .contrib-week:nth-child(28) { --wi: 27; }
+.contrib-calendar > .contrib-week:nth-child(29) { --wi: 28; }
+.contrib-calendar > .contrib-week:nth-child(30) { --wi: 29; }
+.contrib-calendar > .contrib-week:nth-child(31) { --wi: 30; }
+.contrib-calendar > .contrib-week:nth-child(32) { --wi: 31; }
+.contrib-calendar > .contrib-week:nth-child(33) { --wi: 32; }
+.contrib-calendar > .contrib-week:nth-child(34) { --wi: 33; }
+.contrib-calendar > .contrib-week:nth-child(35) { --wi: 34; }
+.contrib-calendar > .contrib-week:nth-child(36) { --wi: 35; }
+.contrib-calendar > .contrib-week:nth-child(37) { --wi: 36; }
+.contrib-calendar > .contrib-week:nth-child(38) { --wi: 37; }
+.contrib-calendar > .contrib-week:nth-child(39) { --wi: 38; }
+.contrib-calendar > .contrib-week:nth-child(40) { --wi: 39; }
+.contrib-calendar > .contrib-week:nth-child(41) { --wi: 40; }
+.contrib-calendar > .contrib-week:nth-child(42) { --wi: 41; }
+.contrib-calendar > .contrib-week:nth-child(43) { --wi: 42; }
+.contrib-calendar > .contrib-week:nth-child(44) { --wi: 43; }
+.contrib-calendar > .contrib-week:nth-child(45) { --wi: 44; }
+.contrib-calendar > .contrib-week:nth-child(46) { --wi: 45; }
+.contrib-calendar > .contrib-week:nth-child(47) { --wi: 46; }
+.contrib-calendar > .contrib-week:nth-child(48) { --wi: 47; }
+.contrib-calendar > .contrib-week:nth-child(49) { --wi: 48; }
+.contrib-calendar > .contrib-week:nth-child(50) { --wi: 49; }
+.contrib-calendar > .contrib-week:nth-child(51) { --wi: 50; }
+.contrib-calendar > .contrib-week:nth-child(52) { --wi: 51; }
+.contrib-calendar > .contrib-week:nth-child(53) { --wi: 52; }
+.contrib-calendar > .contrib-week:nth-child(54) { --wi: 53; }
+
+.contrib-calendar > .contrib-week > .contrib-cell:nth-child(1) { --di: 0; }
+.contrib-calendar > .contrib-week > .contrib-cell:nth-child(2) { --di: 1; }
+.contrib-calendar > .contrib-week > .contrib-cell:nth-child(3) { --di: 2; }
+.contrib-calendar > .contrib-week > .contrib-cell:nth-child(4) { --di: 3; }
+.contrib-calendar > .contrib-week > .contrib-cell:nth-child(5) { --di: 4; }
+.contrib-calendar > .contrib-week > .contrib-cell:nth-child(6) { --di: 5; }
+.contrib-calendar > .contrib-week > .contrib-cell:nth-child(7) { --di: 6; }
+
+.contrib-cell[data-level="NONE"] { background-color: #ebedf0; }
+.contrib-cell[data-level="FIRST_QUARTILE"] { background-color: #9be9a8; }
+.contrib-cell[data-level="SECOND_QUARTILE"] { background-color: #40c463; }
+.contrib-cell[data-level="THIRD_QUARTILE"] { background-color: #30a14e; }
+.contrib-cell[data-level="FOURTH_QUARTILE"] { background-color: #216e39; }
+
+@media (prefers-color-scheme: dark) {
+  .contrib-cell[data-level="NONE"] { background-color: #161b22; }
+  .contrib-cell[data-level="FIRST_QUARTILE"] { background-color: #0e4429; }
+  .contrib-cell[data-level="SECOND_QUARTILE"] { background-color: #006d32; }
+  .contrib-cell[data-level="THIRD_QUARTILE"] { background-color: #26a641; }
+  .contrib-cell[data-level="FOURTH_QUARTILE"] { background-color: #39d353; }
+}
+
+.game-canvas-container {
+  height: var(--canvas-height);
+  transition: height 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 @utility animate-slide-down {
   animation: slide-down 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }

@@ -20,8 +20,7 @@ export default function GithubGraph() {
     <section className="mx-auto flex w-[50%] flex-col py-4 px-1">
       <div
         ref={graphRef}
-        className={`relative group${calendar ? " cursor-pointer" : ""}`}
-        style={{ display: playing ? "none" : undefined }}
+        className={`relative group${calendar ? " cursor-pointer" : ""}${playing ? " hidden" : ""}`}
         onClick={calendar ? startPlaying : undefined}
       >
         <ContributionGraph onReady={setCalendar} />

@@ -41,18 +41,15 @@ export default function ContributionGraph({ onReady }: Props) {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex gap-[3px]">
+      <div className="contrib-calendar flex gap-[3px]">
         {calendar.weeks.map((week, wi) => (
-          <div key={wi} className="flex flex-col gap-[3px] flex-1">
-            {week.contributionDays.map((day, di) => (
+          <div key={wi} className="contrib-week flex flex-col gap-[3px] flex-1">
+            {week.contributionDays.map((day) => (
               <div
                 key={day.date}
+                data-level={day.contributionLevel}
                 title={`${day.date}: ${day.contributionCount} contribution${day.contributionCount !== 1 ? "s" : ""}`}
-                className="w-full aspect-square rounded-[2px]"
-                style={{
-                  backgroundColor: day.color,
-                  animation: `shimmer-cell 8s ${(wi + di) * 35}ms infinite`,
-                }}
+                className="contrib-cell shimmer-cell w-full aspect-square rounded-[2px]"
               />
             ))}
           </div>

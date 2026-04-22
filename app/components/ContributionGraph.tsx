@@ -44,12 +44,15 @@ export default function ContributionGraph({ onReady }: Props) {
       <div className="flex gap-[3px]">
         {calendar.weeks.map((week, wi) => (
           <div key={wi} className="flex flex-col gap-[3px] flex-1">
-            {week.contributionDays.map((day) => (
+            {week.contributionDays.map((day, di) => (
               <div
                 key={day.date}
                 title={`${day.date}: ${day.contributionCount} contribution${day.contributionCount !== 1 ? "s" : ""}`}
                 className="w-full aspect-square rounded-[2px]"
-                style={{ backgroundColor: day.color }}
+                style={{
+                  backgroundColor: day.color,
+                  animation: `shimmer-cell 8s ${(wi + di) * 35}ms infinite`,
+                }}
               />
             ))}
           </div>

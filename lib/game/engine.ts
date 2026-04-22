@@ -54,6 +54,8 @@ export function createGame(
   canvas.addEventListener("mousemove", onMouseMove);
   canvas.addEventListener("touchmove", onTouchMove, { passive: false });
 
+  draw(ctx, state, layout);
+
   function loop() {
     const status = update(state, W, CH);
     draw(ctx, state, layout);

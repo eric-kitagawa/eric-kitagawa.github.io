@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { ContributionCalendar } from "@/types/contributions";
 import ContributionGraph from "@/components/ContributionGraph";
 import GameCanvas from "@/components/GameCanvas";
@@ -8,25 +8,38 @@ import GameCanvas from "@/components/GameCanvas";
 export default function GithubGraph() {
   const [calendar, setCalendar] = useState<ContributionCalendar | null>(null);
   const [playing, setPlaying] = useState(false);
+  const [calendarHeight, setCalendarHeight] = useState(0);
+  const graphRef = useRef<HTMLDivElement>(null);
+
+  function startPlaying() {
+    setCalendarHeight(graphRef.current?.offsetHeight ?? 0);
+    setPlaying(true);
+  }
 
   return (
-    <section className="mx-auto flex w-[50%] flex-col py-4">
+    <section className="mx-auto flex w-[50%] flex-col py-4 px-1">
       <div
-        className="flex flex-col gap-4"
+        ref={graphRef}
+        className={`relative group${calendar ? " cursor-pointer" : ""}`}
         style={{ display: playing ? "none" : undefined }}
+        onClick={calendar ? startPlaying : undefined}
       >
         <ContributionGraph onReady={setCalendar} />
         {calendar && (
-          <button
-            onClick={() => setPlaying(true)}
-            className="self-start text-xs font-mono px-3 py-1.5 border border-zinc-700 rounded hover:bg-zinc-900 transition-colors"
+          <span
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md border border-zinc-600/70 bg-zinc-900/90 px-2.5 py-1 text-xs font-mono text-zinc-200 shadow-sm opacity-0 transition-opacity group-hover:opacity-100"
           >
             ▶ play
-          </button>
+          </span>
         )}
       </div>
       {playing && calendar && (
-        <GameCanvas calendar={calendar} onExit={() => setPlaying(false)} />
+        <GameCanvas
+          calendar={calendar}
+          calendarHeight={calendarHeight}
+          onExit={() => setPlaying(false)}
+        />
       )}
     </section>
   );

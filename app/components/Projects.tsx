@@ -1,34 +1,18 @@
 const projects = [
   {
-    name: "Daylog",
-    stack: "Next.js · Postgres · Tailwind",
-    year: "2024",
+    name: "SelfServe",
+    stack: "Go · Fiber · React · TypeScript · TanStack · Tailwind · Ollama",
+    year: "Ongoing",
     description:
-      "A minimal daily journaling app with streak tracking and mood tagging. Built around the idea that friction is the enemy of consistency.",
+      "Staff-facing hotel management app where an LLM-powered request generator (Go, Genkit, Ollama) converts natural-language guest requests into structured JSON for automated processing.",
     href: "#",
   },
   {
-    name: "Fencetrack",
-    stack: "React · Firebase",
-    year: "2023",
+    name: "CineCircle",
+    stack: "React Native · Expo · TypeScript · Express · Node.js · Supabase · Docker",
+    year: "2025",
     description:
-      "Tournament bracket manager for fencing clubs. Handles pools, DE tables, and live result syncing across devices at a venue.",
-    href: "#",
-  },
-  {
-    name: "Pathfinder",
-    stack: "TypeScript · Canvas",
-    year: "2023",
-    description:
-      "Interactive visualizer for graph search algorithms — BFS, DFS, Dijkstra, A*. Draw walls, set weights, watch the frontier expand in real time.",
-    href: "#",
-  },
-  {
-    name: "eric-kitagawa.github.io",
-    stack: "Next.js · Tailwind",
-    year: "2024",
-    description:
-      "This site. Personal portfolio with a brick-breaker game built from GitHub contribution data.",
+      "Social media app for movies: post ratings, find community, and discover events. Containerized dev environment with Postgres and a typed Express backend.",
     href: "#",
   },
 ];

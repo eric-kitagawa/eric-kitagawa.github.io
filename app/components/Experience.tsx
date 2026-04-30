@@ -2,23 +2,34 @@ const entries = [
   {
     company: "eMoney Advisor",
     role: "Software Engineer Co-op",
-    period: "Spring 2026",
+    period: "Boston · Jan 2026 – Present",
+    stack: "React · TypeScript · C# · AWS · Docker",
     description:
-      "Modernized eMoney's core facts suite end-to-end. Rebuilt client-facing forms, backend APIs, and cloud infrastructure powering all financial planning workflows across the platform.",
+      "Modernizing a core financial planning feature across the full stack: client-facing forms, REST APIs, and CI/CD infrastructure.",
   },
   {
-    company: "Northeastern — Khoury",
-    role: "Research Assistant",
-    period: "2023 – 2024",
+    company: "Johnson & Johnson",
+    role: "Software Engineer Co-op",
+    period: "Boston · Jan 2025 – Jun 2025",
+    stack: "React · TypeScript · Elixir · Python · JavaScript",
     description:
-      "Developed an NLP pipeline for large-scale legal document classification. Explored transformer fine-tuning and active learning strategies on low-resource datasets.",
+      "Built a cardiac monitoring application for patients in cardiogenic shock, spanning real-time waveform visualization, streaming data pipelines, and medical device reliability tooling.",
   },
   {
-    company: "Northeastern — CS Dept.",
+    company: "Generate Product Development",
+    role: "Software Engineer",
+    period: "Boston · Jan 2025 – Present",
+    stack: "React Native · Expo · TypeScript · Supabase",
+    description:
+      "Building mobile apps for Northeastern startups with a cross-functional team. Owns frontend architecture with Expo routing, React Context, and Supabase auth.",
+  },
+  {
+    company: "Northeastern University",
     role: "Teaching Assistant",
-    period: "2022 – 2023",
+    period: "Boston · Aug 2024 – Dec 2025",
+    stack: "Python",
     description:
-      "TA for CS 3000 Algorithms & Data Structures. Ran weekly office hours, graded problem sets, and helped design exam questions for a cohort of 200+ students.",
+      "TA for Northeastern's introductory CS course over two semesters. Led labs and office hours teaching Python, data structures, and program design.",
   },
 ];
 
@@ -34,6 +45,7 @@ export default function Experience() {
               <span className="text-xs font-mono text-zinc-500 shrink-0">{e.period}</span>
             </div>
             <span className="text-xs font-mono text-zinc-400">{e.role}</span>
+            <span className="text-xs font-mono text-zinc-500">{e.stack}</span>
             <p className="mt-1 text-sm text-zinc-400 leading-relaxed">{e.description}</p>
           </div>
         ))}

@@ -1,13 +1,13 @@
 const links = [
-  { label: "email", href: "mailto:kitagawa.e@northeastern.edu" },
+  { label: "email", href: "mailto:erickitagawas@gmail.com" },
   { label: "github", href: "https://github.com/eric-kitagawa" },
-  { label: "linkedin", href: "https://linkedin.com/in/eric-kitagawa" },
+  { label: "linkedin", href: "https://linkedin.com/in/erickitagawa" },
 ];
 
 export default function Footer() {
   return (
     <footer className="mx-auto flex w-[50%] items-center justify-between py-10 border-t border-zinc-800">
-      <span className="text-xs font-mono text-zinc-500">© 2024 Eric Kitagawa</span>
+      <span className="text-xs font-mono text-zinc-500">© 2026 Eric Kitagawa</span>
       <nav className="flex gap-4">
         {links.map((l) => (
           <a

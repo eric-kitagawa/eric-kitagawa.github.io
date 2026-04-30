@@ -5,8 +5,11 @@ import type { ContributionCalendar } from "@/types/contributions";
 import ContributionGraph from "@/components/ContributionGraph";
 import GameCanvas from "@/components/GameCanvas";
 
-export default function GithubGraph() {
-  const [calendar, setCalendar] = useState<ContributionCalendar | null>(null);
+interface Props {
+  calendar: ContributionCalendar | null;
+}
+
+export default function GithubGraph({ calendar }: Props) {
   const [playing, setPlaying] = useState(false);
   const [calendarHeight, setCalendarHeight] = useState(0);
   const graphRef = useRef<HTMLDivElement>(null);
@@ -23,7 +26,7 @@ export default function GithubGraph() {
         className={`relative group${calendar ? " cursor-pointer" : ""}${playing ? " hidden" : ""}`}
         onClick={calendar ? startPlaying : undefined}
       >
-        <ContributionGraph onReady={setCalendar} />
+        <ContributionGraph calendar={calendar} />
         {calendar && (
           <span
             aria-hidden

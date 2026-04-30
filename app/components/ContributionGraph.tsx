@@ -1,21 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
-import { useContributions } from "@/hooks/github";
 import type { ContributionCalendar } from "@/types/contributions";
 
 interface Props {
-  onReady: (calendar: ContributionCalendar) => void;
+  calendar: ContributionCalendar | null;
 }
 
-export default function ContributionGraph({ onReady }: Props) {
-  const { calendar, loading, error } = useContributions();
-
-  useEffect(() => {
-    if (calendar) onReady(calendar);
-  }, [calendar, onReady]);
-
-  if (loading) {
+export default function ContributionGraph({ calendar }: Props) {
+  if (!calendar) {
     return (
       <div className="flex gap-[3px] animate-pulse">
         {Array.from({ length: 53 }, (_, wi) => (
@@ -28,16 +20,6 @@ export default function ContributionGraph({ onReady }: Props) {
       </div>
     );
   }
-
-  if (error) {
-    return (
-      <p className="text-xs font-mono text-red-500">
-        failed to load contributions
-      </p>
-    );
-  }
-
-  if (!calendar) return null;
 
   return (
     <div className="flex flex-col gap-2">
